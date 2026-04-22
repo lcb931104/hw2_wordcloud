@@ -4,12 +4,18 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import random
+import re
 
+# 處理文字
 def count_words(str1):
 
+    # 放處理好句子的 單詞:出現次數
     dict_words = {}
+
+    # 存句子中的單詞
     words = []
 
+    # 文字雲不用，要去掉的代名詞、冠詞...
     drop_words = [
         "a", "A", "an", "An", "the", "The",
 
@@ -56,6 +62,7 @@ def count_words(str1):
         "not", "Not", "no", "No", "nor", "Nor", "yes", "Yes"
     ]
 
+    # 以空格分割出句子中的單詞
     while True:
         found_space = False
 
@@ -72,8 +79,11 @@ def count_words(str1):
             else:
                 words.append(str1)
             break
-
+    
+    # 將單詞放入 words = [] 
     for word in words:
+
+        # 單詞尾巴接標點符號的話去掉
         word = word.replace(".", "").replace(",", "").replace("!", "").replace("?", "")
 
         if word in drop_words:
@@ -258,6 +268,10 @@ class App(tk.Tk):
 
         if not text:
             messagebox.showwarning("提醒", "請先輸入文字或讀入 .txt 檔")
+            return
+
+        if re.search(r'[\u4e00-\u9fff]', text):
+            messagebox.showwarning("提醒", "請輸入英文")
             return
 
         word_freq = count_words(text)
