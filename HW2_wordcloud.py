@@ -169,7 +169,16 @@ def count_words_chinese(str2):
         "{", "}", "「", "」", "『", "』", "《", "》", "〈", "〉", "—", "-", "_",
         "…", ".", ",", "!", "?", ":", ";", "/", "\\", "\"", "'", "“", "”",
 
-        " ", "\n", "\t"
+        " ", "\n", "\t",
+
+        "想", "用", "去", "來", "讓", "使", "令","要", "要去", "要用", "要做", "想要","能夠", "可以", "會", "會去", "會用",
+        "試", "試著", "試圖","弄", "弄成", "搞", "搞成","拿", "帶", "帶來","給", "給出","當", "成", "變", "變得",
+        "做", "做到", "做成", "做法","用來", "拿來","開始", "開始做", "開始用","繼續", "持續","停止", "停下","完成", "達成",
+        "處理", "進行", "實行", "執行","操作", "運作","幫", "幫助", "協助","問", "回答", "回應","找", "找到", "尋找",
+        "看", "看看", "看過","聽", "聽說","講", "談", "談到","寫", "寫出","讀", "讀到","學", "學會","教", "教會","帶", "帶動",
+        "放", "放進", "放入","拉", "推","跑", "跑去","走", "走到","坐", "站","吃", "喝","玩","開", "打開", "關", "關掉",
+        "按", "點", "點擊","選", "選擇","切", "切換","連", "連接","登", "登入", "登出","傳", "上傳", "下載","改", "修改", "更改",
+        "建", "建立", "新增","刪", "刪除","存", "儲存","跑", "執行","叫", "稱為","算", "算出","當作", "視為","希望", "喜歡"
     ]
 
     for word in words:
@@ -234,7 +243,7 @@ class App(tk.Tk):
             self,
             text="中文文字雲建立",
             font=("Microsoft JhengHei", 20),
-            command=self.show_create_page
+            command=self.show_create_page_chinese
         )
         btn2.pack(pady=20)
     
@@ -274,7 +283,7 @@ class App(tk.Tk):
 
         tk.Label(
             top_frame,
-            text="創建文字雲",
+            text="英文文字雲",
             font=("Microsoft JhengHei", 18, "bold")
         ).pack(side="left", padx=10)
 
@@ -363,7 +372,7 @@ class App(tk.Tk):
 
         tk.Label(
             top_frame,
-            text="創建文字雲",
+            text="中文文字雲",
             font=("Microsoft JhengHei", 18, "bold")
         ).pack(side="left", padx=10)
 
@@ -521,6 +530,7 @@ class App(tk.Tk):
         self.wordcloud_obj = WordCloud(
             width=800,
             height=400,
+            font_path = "C:/Windows/Fonts/msjh.ttc",   # 中文字型
             background_color="white",
             max_words=self.max_words_var.get(),
             color_func=lambda *args, **kwargs: random.choice(theme_palette),
