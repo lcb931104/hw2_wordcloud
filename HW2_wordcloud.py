@@ -60,7 +60,20 @@ def count_words(str1):
         "what", "What", "which", "Which", "who", "Who", "whom", "Whom",
         "whose", "Whose", "where", "Where", "when", "When", "why", "Why", "how", "How",
 
-        "not", "Not", "no", "No", "nor", "Nor", "yes", "Yes"
+        "not", "Not", "no", "No", "nor", "Nor", "yes", "Yes",
+
+        "however", "However", "therefore", "Therefore", "thus", "Thus", "moreover", "Moreover",
+        "furthermore", "Furthermore", "meanwhile", "Meanwhile", "otherwise", "Otherwise", "besides", 
+        "Besides", "instead", "Instead", "indeed", "Indeed", "perhaps", "Perhaps", "maybe", "Maybe", 
+        "certainly", "Certainly", "probably", "Probably", "actually", "Actually", "especially", "Especially", 
+        "generally", "Generally", "usually", "Usually", "simply", "Simply", "finally", "Finally", "first", "First", 
+        "second", "Second", "third", "Third", "last", "Last", "again", "Again", "once", "Once", "ever", "Ever", "never", 
+        "Never", "already", "Already", "yet", "Yet", "today", "Today", "tomorrow", "Tomorrow", "yesterday", "Yesterday",
+
+        "as", "As", "et", "Et", "al", "Al", "et al", "Et al", "via", "Via", "per", "Per",
+
+        "according", "According", "based", "Based", "using", "Using", "used", "Used", "use", "Use", "shown", "Shown", "show", 
+        "Show", "result", "Result", "results", "Results", "study", "Study", "studies", "Studies", "paper", "Paper", "papers", "Papers"
     ]
 
     # 以空格分割出句子中的單詞
