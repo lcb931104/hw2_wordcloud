@@ -7,7 +7,7 @@ import random
 import re
 import jieba
 
-# 中文文字處理
+# 英文文字處理
 def count_words(str1):
 
     # 放處理好句子的 單詞:出現次數
